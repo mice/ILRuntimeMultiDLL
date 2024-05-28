@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A5D1C4F-9631-422C-9276-33618D6345BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HotFixCore</RootNamespace>
+    <AssemblyName>HotFixCore</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' == 'Unix' ">
+    <CscToolExe>mcs.exe</CscToolExe>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LOG_ENABLED</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\Library\ScriptAssemblies\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>..\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Plugins\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="spine-unity">
+      <HintPath>..\..\Library\ScriptAssemblies\spine-unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEditor">
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IConfigData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\DOTween.dll" />
+    <Content Include="bin\Debug\DOTween.xml" />
+    <Content Include="bin\Debug\GameMain.dll" />
+    <Content Include="bin\Debug\GameMain.pdb" />
+    <Content Include="bin\Debug\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\Debug\ILRuntime.dll" />
+    <Content Include="bin\Debug\ILRuntime.pdb" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\spine-unity.dll" />
+    <Content Include="bin\Debug\spine-unity.pdb" />
+    <Content Include="bin\Debug\Unity.Cecil.dll" />
+    <Content Include="bin\Debug\Unity.Legacy.NRefactory.dll" />
+    <Content Include="bin\Debug\UnityEditor.dll" />
+    <Content Include="bin\Debug\UnityEditor.xml" />
+    <Content Include="bin\Debug\UnityEngine.AccessibilityModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.AccessibilityModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.AIModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.AIModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.AndroidJNIModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.AndroidJNIModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.AnimationModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.AnimationModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.ARModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.ARModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.AssetBundleModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.AssetBundleModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.AudioModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.AudioModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.ClothModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.ClothModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.ClusterInputModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.ClusterInputModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.ClusterRendererModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.ClusterRendererModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.CoreModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.CoreModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.CrashReportingModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.CrashReportingModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.DirectorModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.DirectorModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.dll" />
+    <Content Include="bin\Debug\UnityEngine.DSPGraphModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.DSPGraphModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.GameCenterModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.GameCenterModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.GridModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.GridModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.ImageConversionModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.ImageConversionModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.IMGUIModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.IMGUIModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.InputLegacyModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.InputLegacyModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.InputModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.InputModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.JSONSerializeModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.JSONSerializeModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.LocalizationModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.LocalizationModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.ParticleSystemModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.ParticleSystemModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.PerformanceReportingModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.PerformanceReportingModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.Physics2DModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.Physics2DModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.PhysicsModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.PhysicsModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.ScreenCaptureModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.ScreenCaptureModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.SharedInternalsModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.SharedInternalsModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.SpriteMaskModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.SpriteMaskModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.SpriteShapeModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.SpriteShapeModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.StreamingModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.StreamingModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.SubsystemsModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.SubsystemsModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.TerrainModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.TerrainModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.TerrainPhysicsModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.TerrainPhysicsModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.TextCoreModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.TextCoreModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.TextRenderingModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.TextRenderingModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.TilemapModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.TilemapModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.UI.dll" />
+    <Content Include="bin\Debug\UnityEngine.UI.pdb" />
+    <Content Include="bin\Debug\UnityEngine.UIElementsModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.UIElementsModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.UIModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.UIModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.UNETModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.UNETModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.UnityAnalyticsModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.UnityAnalyticsModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.UnityConnectModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.UnityConnectModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.UnityWebRequestAudioModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.UnityWebRequestAudioModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.UnityWebRequestModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.UnityWebRequestModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.UnityWebRequestTextureModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.UnityWebRequestWWWModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.VehiclesModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.VehiclesModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.VFXModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.VFXModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.VideoModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.VideoModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.VRModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.VRModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.WindModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.WindModule.xml" />
+    <Content Include="bin\Debug\UnityEngine.xml" />
+    <Content Include="bin\Debug\UnityEngine.XRModule.dll" />
+    <Content Include="bin\Debug\UnityEngine.XRModule.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /y $(TargetDir)$(TargetFileName) $(ProjectDir)..\StreamingAssets\HotFixDLL\$(TargetName).bytes
+copy /y $(TargetDir)$(TargetName).pdb $(ProjectDir)..\StreamingAssets\HotFixDLL\$(TargetName).pdb
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>
